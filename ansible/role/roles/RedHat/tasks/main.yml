@@ -1,4 +1,4 @@
-#        - name: Installing additional packages
+#        - name: Installing additional repos for Centos
 #          ansible.builtin.yum:
 #            name: epel-release
 #            state: present
@@ -11,7 +11,7 @@
               - git
             state: present
         
-#        - name: Start service httpd, if not started
+#        - name: Start service ufw, if not started
 #          ansible.builtin.service:
 #            name: ufw
 #           state: started
