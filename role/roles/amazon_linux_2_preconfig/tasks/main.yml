@@ -1,14 +1,4 @@
-
-#        - name: Start service ufw, if not started
-#          ansible.builtin.service:
-#            name: ufw
-#           state: started
-
-#        - name: Allow http traffic
-#         community.general.ufw:
-#            rule: allow
-#            port: '80' 
-          
+ 
         - name: Remove index file
           ansible.builtin.file:
             path: /usr/share/nginx/html
