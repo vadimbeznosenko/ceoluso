@@ -1,0 +1,35 @@
+
+#        - name: Start service ufw, if not started
+#          ansible.builtin.service:
+#            name: ufw
+#           state: started
+
+#        - name: Allow http traffic
+#         community.general.ufw:
+#            rule: allow
+#            port: '80' 
+          
+        - name: Remove index file
+          ansible.builtin.file:
+            path: /usr/share/nginx/html
+            state: absent
+
+        - name: Copy git repo
+          ansible.builtin.git:
+            repo: https://github.com/vadimbeznosenko/ceoluso.git
+            dest: /usr/share/nginx/html/
+            single_branch: yes
+            version: master
+      
+        - name: Add text "deployed by Luxoft"
+          ansible.builtin.lineinfile:
+            path: /usr/share/nginx/html/index.html
+            regexp: '^(.*)Ceoluso &copy; 2021 | All rights reserved by Mrh Rifat(.*)$' 
+            line: 'deployed by Luxoft {{ ansible_date_time.date }}'
+            backrefs: yes
+
+        - name: Start service nginx, if not started
+          ansible.builtin.service:
+            name: nginx
+            state: started
+            enabled: yes

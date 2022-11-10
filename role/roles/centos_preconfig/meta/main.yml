@@ -1,0 +1,14 @@
+galaxy_info:
+    role_name: redhat
+    description: Installing nginx on CentOS servers
+    author: Beznosenko Vadym
+    min_ansible_version: 2.12.5
+    license: MIT
+    platforms:
+    - name: Fedora
+      versions:
+      - all
+dependencies:
+  - role: centos_packages
+
+

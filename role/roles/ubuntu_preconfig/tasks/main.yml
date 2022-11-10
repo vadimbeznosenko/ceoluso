@@ -1,8 +1,3 @@
-        - name: Installing additional packages
-          ansible.builtin.apt:
-            name: nginx
-            update-cache: yes
-            cache_valid_time: 86400
 
         - name: Allow http traffic
           community.general.ufw:

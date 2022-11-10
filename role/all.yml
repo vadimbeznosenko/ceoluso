@@ -3,8 +3,14 @@
   become: yes
   hosts: nginx_host
   roles:
-    - role: RedHat
-      when: ansible_facts['os_family'] == "RedHat"
-    - role: Debian
-      when: ansible_facts['os_family'] == "Debian"
+    - role: centos_packages
+    - role: centos_preconfig
+      when: ansible_facts['distribution'] == "CentOS"
+    - role: ubuntu_packages
+    - role: ubuntu_preconfig
+      when: ansible_facts['distribution'] == "Ubuntu"
+    - role: amazon_linux_2_packages
+    - role: amazon_linux_2_preconfig
+      when: ansible_facts['distribution'] == "Amazon"
+
     

@@ -1,0 +1,14 @@
+galaxy_info:
+    role_name: redhat
+    description: Installing nginx on Amazon Linux 2 servers
+    author: Beznosenko Vadym
+    min_ansible_version: 2.12.5
+    license: MIT
+    platforms:
+    - name: Amazon Linux 2
+      versions:
+      - all
+dependencies:
+  - role: amazon_linux_2_packages
+
+
