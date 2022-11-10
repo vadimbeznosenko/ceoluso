@@ -1,5 +1,5 @@
 galaxy_info:
-    role_name: debian
+    role_name: ubuntu_preconfig
     description: Installing nginx on Ubuntu servers
     author: Beznosenko Vadym
     min_ansible_version: 2.12.5

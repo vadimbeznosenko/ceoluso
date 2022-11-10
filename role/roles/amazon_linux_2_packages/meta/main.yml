@@ -1,5 +1,5 @@
 galaxy_info:
-    role_name: debian
+    role_name: amazon_linux_2_packages
     description: Installing nginx on Debian servers
     author: Beznosenko Vadym
     min_ansible_version: 2.12.5
